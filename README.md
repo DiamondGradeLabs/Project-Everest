@@ -1,10 +1,10 @@
+ ![Project Everest Logo](https://project-everest-diamongradelabs.s3-us-west-2.amazonaws.com/public/Project+Everest.png)
+
 # Project Everest
 
-Welcome to Project Everest! 
+Welcome to Project Everest!
 
-![Project Everest Logo](https://project-everest-diamongradelabs.s3-us-west-2.amazonaws.com/public/Project+Everest.png)
-
-**Project Everest** is a project to facilitate creation of a framework (Potentially called *Everest*).
+**Project Everest** is a project to facilitate the creation of a framework (Potentially called *Everest*).
 This framework is designed to simplify and modernize the Panda3d Game Engine (https://www.panda3d.org/). 
 
 The Game Engine was designed and built by Disney in the early 2000's for use in their game development space. Over the years the game engine has evolved and is currently maintained by Carnegie-Mellon University(https://www.cmu.edu/) under a modified BSD license which is linked below as this project is under the same license. 
