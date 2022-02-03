@@ -16,8 +16,8 @@ Questions regarding versioning can be found in the **Project/Versioning.md**
 	 - ~~Read Me~~
 	 - ~~Start Here~~
 	 - ~~Road Map~~
- - Establish A Concise Commit/Branch Name Scheme
- - Establish Changelog History Folder
+ - ~~Establish A Concise Commit/Branch Name Scheme~~
+ - ~~Establish Changelog History Folder~~(Cancelled)
 
 ## 0.1.0 [Pending]
 0.1.0 is the current minor development release branch. This is a **development-release** version.
