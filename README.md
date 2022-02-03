@@ -18,6 +18,12 @@ The whole idea of this project is to be open source and be community driven ther
 
 **Please checkout the** *StartHere* **file under** *Documentation/Support*!
 
+## Building
+
+Currently the only build that is added by default is linux. I will be adding windows build files as soon as I can. At some point a folder with some boilerplate build configuraitons may be added.
+
+As of right now the Makefile has created for g++ and will be modified as the project progresses.
+
 ## License
 Panda3d License: http://www.panda3d.org/license/
 
