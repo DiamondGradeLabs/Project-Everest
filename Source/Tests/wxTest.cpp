@@ -1,10 +1,10 @@
 /*
 * ----------------------------------------------------------
-* EverestEngine.cpp
+* wxTest.cpp
 * ----------------------------------------------------------
-* Everest Engine Root File.
+* Test Development Environment for Proper wxWidget Setup.
 *
-* Everything starts here!
+* 
 *
 * Author: Adam Guthrie
 * Date: February 2, 2022
@@ -16,6 +16,10 @@
 //Panda3d Includes
 
 //wxWidget Includes
+#include <wx/wxprec.h>
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
 
 //Everest Includes
 
@@ -23,6 +27,9 @@ using namespace std;
 
 int main()
 {
-    //Main Function 
-    cout << "Everest Engine 0.0.1" << endl;
+    //Main Function
+    cout << "wxWidget Test" << endl;
+    system("wx-config --version");
+
+    return 0;
 }
