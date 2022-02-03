@@ -8,19 +8,31 @@ Production:
 #generate a logs folder with component logging. This logging can be manipulated by
 #modifying the debug header file.
 Development: 
-	g++ ./Source/EverestEngine.cpp -o ./Binaries/Development/EverestEngine
+	g++ ./Source/EverestEngine.cpp `wx-config --cxxflags --libs` -o ./Binaries/Development/EverestEngine
+
+#wxTest
+#This will compile the wxWidget Test File.
+wxTest:	
+	g++ ./Source/Tests/wxTest.cpp `wx-config --cxxflags --libs` -o ./Binaries/Test/wxTest
+
+#wxTest
+#This will compile the wxWidget Test File.
+wxHelloWorld:	
+	g++ ./Source/Tests/wxHelloWorld.cpp `wx-config --cxxflags --libs` -o ./Binaries/Test/wxHelloWorld
 
 #Setup
 #Run make Setup to generate the missing pieces of the repo.
 Setup:
 	mkdir ./Binaries/Production
 	mkdir ./Binaries/Development
+	mkdir ./Binaries/Test
 
 #CleanAll
 #Run CleanAll to remove all binaries and log files
 CleanAll:
 	rm -rf ./Binaries/Production/EverestEngine
 	rm -rf ./Binaries/Development/EverestEngine
+	rm -rf ./Binaries/Test/wxTest
 
 #CleanProd
 #Run CleanProd to remove all Production binaries

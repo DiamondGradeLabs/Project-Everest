@@ -32,4 +32,7 @@
 *.app
 
 # Anything in the Binaries Folder
-./Binaries
+Binaries/
+
+# Any vscode configuration data
+.vscode/
