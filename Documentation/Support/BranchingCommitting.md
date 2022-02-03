@@ -13,6 +13,7 @@ Branch "Types":
  - Patch: This branch type is for multiple bug fix commits in the same branch.
 
 A branch name should be as follows:
+**Release**: Release-\<Release Version\>-\<Relase Pipline\> (example: Release-0.1.0-dev)
 **Feature**:   Feature-\<Feature Name\> (example: Feature-Example-Feature)
 **Documentation**: Documentation- \<Documents Summary Title\> (example: Documentation-General-Project-Documents)
 **Issue Fix**: Issue- #\<Issue Number\> \<Issue Title\>  (example: Issue-#-1-Example-Issue)
@@ -20,6 +21,8 @@ A branch name should be as follows:
 
 ## Committing
 As far as committing goes this should only be on branches you own. Any pull request to project branches by anyone other than a maintainer will be rejected.
+
+You should be createing a branch and then publishing the branch to the repo. Then a maintainer will look at the branch and create the pull request. After which they will delete the branch.
 
 As far as commits go just use the following format:
 \<Commit Title\>
@@ -34,7 +37,7 @@ Added \Example.txt\
 ## Branching And Committing Example
 Let us say that you are wanting to add a new feature and no one else has created a branch for that feature. Let us also say that feature is going to be adding a GameObject class.
 
-Here is an example branch for this will a couple of commits:
+Here is an example branch for this we will a couple of commits:
 New branch created from root default of **0.0.1**: Feature-GameObject
 
 Within the branch you may have some commits:
