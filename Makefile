@@ -7,8 +7,11 @@ Production:
 #This will generate a program that has debugging enabled by default and will 
 #generate a logs folder with component logging. This logging can be manipulated by
 #modifying the debug header file.
-Development: 
-	g++ ./Source/EverestEngine.cpp `wx-config --cxxflags --libs` -o ./Binaries/Development/EverestEngine
+Development:
+	make CleanDev
+	g++ -c ./Source/EverestEngine.cpp `wx-config --cxxflags --libs` -o ./Binaries/Development/EverestEngine.o -O2 -std=gnu++11 -I/usr/include/panda3d -I/usr/include/eigen3 -ggdb
+	g++ ./Source/UI/GameWindow.cpp -c -o ./Binaries/Development/GameWindow.o -O2 -std=gnu++11 -I/usr/include/panda3d -I/usr/include/eigen3 -ggdb
+	g++ ./Binaries/Development/EverestEngine.o ./Binaries/Development/GameWindow.o -o ./Binaries/Development/EverestEngine -L/usr/lib/x86_64-linux-gnu/panda3d -ggdb -lp3framework -lpanda -lpandafx -lpandaexpress -lp3dtoolconfig -lp3dtool -lp3direct	
 
 #wxTest
 #This will compile the wxWidget Test File.
@@ -48,6 +51,7 @@ CleanProd:
 #Run CleanDev to remove Development binaries and log files
 CleanDev:
 	rm -rf ./Binaries/Development/EverestEngine
+	rm -rf ./Binaries/Development/*.o
 
 #CleanTest
 #Run CleanTest to remove test binaires and object files
