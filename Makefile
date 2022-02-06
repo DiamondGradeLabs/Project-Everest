@@ -9,11 +9,8 @@ Production:
 #modifying the debug header file.
 Development:
 	make CleanDev
-	g++ -c ./Source/UI/ToolsWindow.cpp `wx-config --cxxflags --libs` -o ./Binaries/Development/ToolsWindow.o -O2 -std=gnu++11 -ggdb
 	g++ -c ./Source/EverestEngine.cpp `wx-config --cxxflags --libs` -o ./Binaries/Development/EverestEngine.o -O2 -std=gnu++11 -I/usr/include/panda3d -I/usr/include/eigen3 -ggdb
-#g++ -c ./Source/UI/ToolsWindow.cpp `wx-config --cxxflags --libs` -o ./Binaries/Development/ToolsWindow.o -O2 -std=gnu++11 -ggdb
-	g++ ./Source/UI/GameWindow.cpp -c -o ./Binaries/Development/GameWindow.o -O2 -std=gnu++11 -I/usr/include/panda3d -I/usr/include/eigen3 -ggdb
-	g++ ./Binaries/Development/EverestEngine.o ./Binaries/Development/GameWindow.o ./Binaries/Development/ToolsWindow.o -o ./Binaries/Development/EverestEngine -L/usr/lib/x86_64-linux-gnu/panda3d `wx-config --cxxflags --libs` -ggdb -lp3framework -lpanda -lpandafx -lpandaexpress -lp3dtoolconfig -lp3dtool -lp3direct	
+	g++ ./Binaries/Development/EverestEngine.o -o ./Binaries/Development/EverestEngine -L/usr/lib/x86_64-linux-gnu/panda3d `wx-config --cxxflags --libs` -ggdb -lp3framework -lpanda -lpandafx -lpandaexpress -lp3dtoolconfig -lp3dtool -lp3direct		
 
 #wxTest
 #This will compile the wxWidget Test File.

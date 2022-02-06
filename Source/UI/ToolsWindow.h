@@ -23,6 +23,8 @@
 //C++ Includes
 
 //Panda3d Includes
+#include "pandaFramework.h"
+#include "pandaSystem.h"
 
 //wxWidget Includes
 #include <wx/wxprec.h>//This may cause IntelliSense Squiggles
@@ -39,7 +41,7 @@ enum
     ID_Stop_Loop = 2
 };
 
-//#define ID_Start_Loop 1;
+extern PandaFramework framework;
 
 class ToolsWindow : public wxFrame
 {

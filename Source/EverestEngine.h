@@ -36,6 +36,9 @@
 #include "UI/GameWindow.h"
 #include "UI/ToolsWindow.h"
 
+#include "UI/GameWindow.cpp"
+#include "UI/ToolsWindow.cpp"
+
 //Global Variables
 PandaFramework framework;
 WindowFramework *window;

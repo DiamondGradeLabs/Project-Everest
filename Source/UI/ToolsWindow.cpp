@@ -66,5 +66,7 @@ using namespace std;//Use the standard namespace.
 
 void ToolsWindow::OnExit(wxCommandEvent& event)
 {
+    framework.set_exit_flag();
+    framework.close_framework();
     Close(true);
 }
