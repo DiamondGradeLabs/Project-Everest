@@ -1,17 +1,16 @@
 /*
 * ----------------------------------------------------------
-* GameWindow.h
+* ToolsWindow.h
 * ----------------------------------------------------------
-* Header File For GameWindow Class.
+* Header File For ToolsWindow Class
 *
-* GameWindow is the class for storing basic game and framework 
-* functionaity.
+* ToolsWindow is the class for storing the Tools buttons.
 * 
 * Author: Adam Guthrie
-* Date: 4/26/2019
+* Date: 2/5/2022
 */
-#ifndef GAMEWINDOW_H
-#define GAMEWINDOW_H
+#ifndef TOOLSWINDOW_H
+#define TOOLSWINDOW_H
 
 /*
 * ----------------------------------------------------------
@@ -22,16 +21,29 @@
 *
 */
 //C++ Includes
-#include "iostream"
 
-//Panda Includes
+//Panda3d Includes
 #include "pandaFramework.h"
 #include "pandaSystem.h"
 
-extern PandaFramework framework;
-extern WindowFramework *window;
+//wxWidget Includes
+#include <wx/wxprec.h>//This may cause IntelliSense Squiggles
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
 
-class GameWindow
+//Everest Includes
+
+//Global Variables
+enum
+{
+    ID_Start_Loop = 1,
+    ID_Stop_Loop = 2
+};
+
+extern PandaFramework framework;
+
+class ToolsWindow : public wxFrame
 {
 /*
 * ----------------------------------------------------------
@@ -41,9 +53,7 @@ class GameWindow
 * members of the class.
 *
 */
-public:
-	
-	
+public: 
 	/*
 	* ----------------------------------------------------------
 	* Constructors
@@ -51,43 +61,18 @@ public:
 	* Used to create instances of the GameWindow Class.
 	*
 	*/
-	
-		/*
-		* GameWindow()
-		* Used to create an instance of the GameWindow Class.
+    	/*
+		* ToolsWindow
+		* Used to create an instance of the ToolsWindow Class
 		*/
-		GameWindow();
-
-		~GameWindow();
-
-	/*
+		ToolsWindow();
+    
+    /*
 	* ----------------------------------------------------------
-	* WindowFramework Functions
+	* wxWidget Functions
 	* ----------------------------------------------------------
-	* Used to manipulate the WindowFramework object.
+	* Used to manipulate the wxWidget components
 	*/
-	
-		/*
-		* create_window(std::string)
-		* Creates window with title.
-		*/
-		void create_window(std::string);
-
-		/*
-		* set_title(std::string)
-		* Set window title.
-		*/
-		void set_title(std::string);
-
-		/*
-		* get_title()
-		* Return window title.
-		*/
-		std::string get_title();
-
-		PandaFramework* get_framework();
-
-		
 
 /*
 * ----------------------------------------------------------
@@ -98,29 +83,14 @@ public:
 * member function.
 *
 */
-private: 
-	
-	/*
-	* ----------------------------------------------------------
-	* Private Functions and Objects With Public Members
-	* ----------------------------------------------------------
-	* Private members of the GameWindow class. Any manipulation
-	* must be done either from within the class or by a public
-	* member function.
-	*
-	*/
-		
-	
+private:
 
-	/*
+    /* ----------------------------------------------------------
+	* wxWidget Functions
 	* ----------------------------------------------------------
-	* Private Functions and Objects Without Public Members
-	* ----------------------------------------------------------
-	* Private members of the GameWindow class. Any manipulation
-	* must be done either from within the class.
-	*
+	* Used to manipulate the wxWidget components
 	*/
-		std::string windowTitle;//Window title string.
+    void OnExit(wxCommandEvent& event);
+
 };
-
 #endif
