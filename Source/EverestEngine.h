@@ -21,6 +21,7 @@
 *
 */
 //C++ Includes
+#include <thread>
 
 //Panda3d Includes
 #include "pandaFramework.h"
@@ -41,8 +42,14 @@
 
 //Global Variables
 PandaFramework framework;
+GraphicsEngine *graphics_engine;
 WindowFramework *window;
 
+GameWindow previewWindow;
+
+std::thread windowThread;
+
+//bool loop_state = false;
 
 class EverestEngine : public wxApp
 {
@@ -89,22 +96,12 @@ public:
         void start_panda(int argc, char* argv[]);
 
         /*
-        * start_loop()
-        * Starts the Main Loop
-        */
-        void start_loop();
-
-        /*
-        * stop_loop()
-        * Stops the main loop.
-        */
-        void stop_loop();
-
-        /*
-        * stop_loop()
+        * stop_panda()
         * Close the FrameWork
         */
         void stop_panda();
+
+        void load_test_scene();
 
 /*
 * ----------------------------------------------------------
@@ -117,8 +114,7 @@ public:
 */
 private:
 
-    GameWindow previewWindow = GameWindow();
+    //GameWindow previewWindow = GameWindow();
     ToolsWindow *tools;
-
 };
 #endif

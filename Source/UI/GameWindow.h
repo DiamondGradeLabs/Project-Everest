@@ -27,6 +27,8 @@
 //Panda Includes
 #include "pandaFramework.h"
 #include "pandaSystem.h"
+//#include "pandaCore.h"
+#include "windowProperties.h"
 
 extern PandaFramework framework;
 extern WindowFramework *window;

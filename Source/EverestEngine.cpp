@@ -59,11 +59,12 @@ bool EverestEngine::OnInit()
     cout << "Everest Engine 0.1.0" << endl;
     this->start_panda(0, NULL);
     this->tools = new ToolsWindow();
+    previewWindow = GameWindow();
     this->tools->Show(true);
-    this->previewWindow.create_window("Everest Engine Preview Window");
+    previewWindow.create_window("Everest Engine Preview Window");
+    this->load_test_scene();
     return true;
 }
-
 
 
 /*
@@ -80,34 +81,26 @@ bool EverestEngine::OnInit()
     void EverestEngine::start_panda(int argc, char* argv[])
     {
         framework.open_framework(argc, argv);
+        graphics_engine = GraphicsEngine::get_global_ptr();
     }
 
     /*
-    * start_loop()
-    * Starts the Main Loop
-    */
-    void EverestEngine::start_loop()
-    {
-        framework.main_loop();
-    }
-
-    /*
-    * stop_loop()
-    * Stops the main loop.
-    */
-    void EverestEngine::stop_loop()
-    {
-        framework.set_exit_flag();
-    }
-
-    /*
-    * stop_loop()
+    * stop_panda()
     * Close the FrameWork
     */
     void EverestEngine::stop_panda()
     {
         framework.close_framework();
     }
+
+    void EverestEngine::load_test_scene()
+    {
+        NodePath scene = window->load_model(framework.get_models(), "models/environment");
+        scene.reparent_to(window->get_render());
+        scene.set_scale(0.25f, 0.25f, 0.25f);
+        scene.set_pos(-8, 42, 0);
+    }
+    
 
 //wxWidgets Start, OnInit takes the place of main().
 wxIMPLEMENT_APP(EverestEngine);

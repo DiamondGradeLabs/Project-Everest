@@ -70,7 +70,13 @@ using namespace std;//Use the standard namespace.
 	void GameWindow::create_window(string windowName)
 	{
 		framework.set_window_title(windowName);//Setup Game Window
-		window = framework.open_window();//Open Game Window
+		//window = framework.open_window();//Open Game Window
+		WindowProperties *props = new WindowProperties();
+    	props->set_size(640,480);
+    	props->set_undecorated(true);
+    	window = framework.open_window(*props,0);
+    	delete props;
+		//window->get_graphics_window()->get_properties().set_undecorated(true);
 	}
 
 	/*

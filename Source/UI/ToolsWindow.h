@@ -21,6 +21,7 @@
 *
 */
 //C++ Includes
+#include <thread>
 
 //Panda3d Includes
 #include "pandaFramework.h"
@@ -33,6 +34,7 @@
 #endif
 
 //Everest Includes
+#include "GameWindow.h"
 
 //Global Variables
 enum
@@ -42,6 +44,8 @@ enum
 };
 
 extern PandaFramework framework;
+extern std::thread windowThread;
+extern GameWindow previewWindow;
 
 class ToolsWindow : public wxFrame
 {
@@ -85,12 +89,16 @@ public:
 */
 private:
 
+	static void start_loop();
+	static void stop_loop();
     /* ----------------------------------------------------------
 	* wxWidget Functions
 	* ----------------------------------------------------------
 	* Used to manipulate the wxWidget components
 	*/
     void OnExit(wxCommandEvent& event);
+	void StartLoop(wxCommandEvent& event);
+	void StopLoop(wxCommandEvent& event);
 
 };
 #endif
